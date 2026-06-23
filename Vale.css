@@ -1,0 +1,131 @@
+body{
+
+    margin:0;
+    overflow:hidden;
+    background:black;
+    font-family:Arial, sans-serif;
+
+}
+
+canvas{
+
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1;
+
+}
+
+#card{
+
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+    width:min(85vw,420px);
+    background:rgba(0,0,0,0.45);
+
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px;
+
+    padding:20px;
+    text-align:center;
+    color:white;
+
+    z-index:1000;
+    box-shadow:
+    0 0 30px rgba(255,105,180,0.4);
+
+}
+
+#cardImage{
+
+    width:100%;
+    max-height:450px;
+    object-fit:cover;
+    border-radius:15px;
+
+}
+
+#cardText{
+
+    margin-top:15px;
+    font-size:1.1rem;
+    line-height:1.5;
+    text-shadow:
+    0 0 10px white;
+
+}
+
+@media(max-width:768px){
+
+    #card{
+        width:90vw;
+        padding:15px;
+    }
+    #cardText{
+        font-size:1rem;
+    }
+
+}
+
+#indicador{
+
+    display:flex;
+    justify-content:center;
+    gap:10px;
+
+    margin-top:15px;
+
+}
+
+.punto{
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:#555;
+
+    transition:0.3s;
+
+}
+
+.punto.activo{
+
+    background:#ff66aa;
+
+    box-shadow:
+    0 0 10px #ff66aa,
+    0 0 20px #ff66aa;
+
+}
+
+.fade-out{
+
+    opacity:0;
+
+    transform:
+    translateX(-30px);
+
+}
+
+.fade-in{
+
+    opacity:1;
+
+    transform:
+    translateX(0);
+
+}
+
+#card{
+
+    transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+
+}
